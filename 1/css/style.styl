@@ -1,0 +1,209 @@
+* {
+  padding: 0px 
+  margin: 0px 
+}
+
+body {
+  background-color: #F1FFE6 
+}
+
+.container {
+  width: 950px 
+  margin: 70px auto 0px auto 
+  text-align: center 
+}
+
+.icon {
+  width: 125px 
+  height: 120px 
+  position: relative 
+  .frog {
+	  position: absolute 
+	  top: 0 
+	  left: 0 
+	  width: 100% 
+	  height: 100% 
+	  .body {
+		  width: 110px 
+		  height: 86px 
+		  background-color: #A3D768 
+		  border-radius: 50% 
+		  position: absolute 
+		  top: 25px 
+		  left: 0 
+		  right: 0 
+		  margin: auto 
+		  box-shadow: 4px 4px 0px 0px rgba(163, 215, 104, 0.3) 
+		  .mouth {
+			  margin: auto 
+			}
+		  .big-mouth {
+			  width: 30px 
+			  height: 20px 
+			  border-radius: 0 0 50% 50% 
+			  box-shadow: 2px 2px 0px 0px rgba(63, 106, 52, 0.3) 
+			}
+		}
+	  .eyes {
+		  width: 86px 
+		  height: 35px 
+		  position: absolute 
+		  top: 8px 
+		  left: 0 
+		  right: 0 
+		  margin: auto 
+		  .eye {
+			  width: 35px 
+			  height: 35px 
+			  &:before{
+				  content: "" 
+				  display: block 
+				  width: 100% 
+				  height: 100% 
+				  background-color: #A3D768 
+				  border-radius: 50% 
+				}
+			  .eye-inner {
+				  background-color: #fff 
+				  width: 80% 
+				  height: 80% 
+				  position: absolute 
+				  top: 10% 
+				  left: 10% 
+				  border-radius: 50% 
+				  .pupil {
+					  background-color: #3F6A34 
+					  width: 60% 
+					  height: 60% 
+					  position: absolute 
+					  top: 20% 
+					  left: 20% 
+					  border-radius: 50% 
+					  .light {
+						  background-color: #fff 
+						  width: 50% 
+						  height: 50% 
+						  position: absolute 
+						  top: 10% 
+						  left: 10% 
+						  border-radius: 50% 
+						}
+					}
+				}
+			}
+		  .eye.extra-light{
+			    .light{
+					  width: 40% 
+					  height: 40% 
+					  &:before{
+						  content: "" 
+						  display: block 
+						  width: 70% 
+						  height: 70% 
+						  background-color: #fff 
+						  border-radius: 50% 
+						}
+					}
+				}
+		  .eye-left {
+			  position: absolute 
+			  top: 0px 
+			  left: 0 
+			}
+		  .eye-right {
+			  position: absolute 
+			  top: 0px 
+			  right: 0 
+			}
+		}
+	}
+}
+
+.frog#frog-4{
+	.eye{
+		.light {
+		  position: absolute 
+		  top: 9px 
+		  left: 0px 
+		  &:before{
+			  position: absolute 
+			  top: -5px 
+			  left: 0px 
+			}
+		}
+	}
+	.mouth {
+	  position: absolute 
+	  top: 20px 
+	  left: 0 
+	  right: 0 
+	  background-color: #ec7977 
+	  overflow: hidden 
+	  -webkit-transform-origin: center top 
+			  transform-origin: center top 
+	  -webkit-animation: laugh 1.9s linear 0s infinite 
+			  animation: laugh 1.9s linear 0s infinite 
+	  .toungue {
+		  width: 17px 
+		  height: 17px 
+		  background-color:  #C71F1C
+		  border-radius: 20px 
+		  position: absolute 
+		  top: 9px 
+		  left: 3 
+		  transrotate 90
+		}
+	}
+}
+
+transcale(x,y){
+	-webkit-transform: scale(x, y) 
+            transform: scale(x, y) 
+}
+transrotate(degree){
+	-webkit-transform: rotate(degree) 
+			transform: rotate(degree) 
+}
+
+
+@-webkit-keyframes laugh {
+  0% {
+    transcale(1,0)
+  }
+  30% {
+    transcale(1,1)
+  }
+  40% {
+    transcale(1,0.6)
+  }
+  50% {
+    transcale(1,1)
+  }
+  60% {
+    transcale(1,0.6)
+  }
+  70% {
+    transcale(1,1)
+  }
+}
+@keyframes laugh {
+  0% {
+    transcale(1,0)
+  }
+  30% {
+    transcale(1,1)
+  }
+  40% {
+    transcale(1,0.6)
+  }
+  50% {
+    transcale(1,1)
+  }
+  60% {
+    transcale(1,0.6)
+  }
+  70% {
+    transcale(1,1)
+  }
+}
+
