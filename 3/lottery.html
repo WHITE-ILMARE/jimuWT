@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Lottery</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" type = "text/css" href="css/lottery.css" >
+		<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+		<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+	</head>
+	
+	<body>	
+		<div id='hat'>
+			1~9元抽奖小程序
+		</div>
+		<div id="mainpart" class="col-md-7">
+			<ol>
+				<basic-item 
+				v-for="money in moneylist"
+				v-bind:moneys = "money"
+				v-bind:key = "money.number">
+				</basic-item>
+			</ol>
+		</div>
+		<div class = "col-md-1"></div>
+		<div id="info" class = "col-md-5">
+			<p>您一共抽取到了{{moneysum}}元</p>
+			<p>您还有{{times}}次抽奖机会</p>
+			<p>您上次抽到了{{lastmoney}}元</p>
+			<button class="btn btn-primary btn-lg btn-block" v-on:click="dolottery">抽奖</button>
+		</div>
+		
+		
+		<script type = "text/javascript">
+			
+			Vue.component('basic-item', {
+			  props: ['moneys'],
+			  template: '<p v-if="moneys.isselected===0" >{{ moneys.number }}元</p>'
+			})
+			var info = new Vue({
+				el:'#info',
+				data:{
+					times:9,
+					moneysum:0,
+					lastmoney:0
+				},
+				methods:{
+					dolottery:function(){
+						if(this.times>0)
+						{
+							this.times = this.times -1;
+							var money = Math.floor(Math.random()*9+1);
+							var it = 0;
+							for(it=0;it<9;it++)
+								if(lottery.moneylist[it].number===money)
+									break;
+							while(lottery.moneylist[it].isselected===1)
+							it = (it+1)%9;
+							money = lottery.moneylist[it].number;
+							this.moneysum = this.moneysum+money;
+							lottery.moneylist[it].isselected=1;
+							this.lastmoney = money;
+						}
+						else
+						alert("您的抽奖次数已经用完了！");
+					}
+				}
+			})
+
+			var lottery = new Vue({
+				el:'#mainpart',
+				data:{
+					moneylist:[
+						{number:1,isselected:0},
+						{number:2,isselected:0},
+						{number:3,isselected:0},
+						{number:4,isselected:0},
+						{number:5,isselected:0},
+						{number:6,isselected:0},
+						{number:7,isselected:0},
+						{number:8,isselected:0},
+						{number:9,isselected:0}
+					],
+				}
+			})
+		</script>
+	</body>
+</html>
