@@ -15,5 +15,8 @@
 4.使用nodejs，实现一个查询某个城市天气的代码，表现形式不限
 答：见文件夹4，运行npm install安装依赖的包后，运行app.js，在浏览器打开"localhost:3333",即可查看北京从今日起的未来七日天气
 
+5.使用 http://www.nightmarejs.org/ 爬取 https://box.jimu.com/Venus/List 第一页项目数据，并生成一个数组，每个数据格式为 {name: **, rate: **, month: **, status: **}
+答：见文件夹5，运行npm  install安装依赖的包后，运行night.js,即可在控制台中看到爬去取信息。
+
 章哲源
 2480800244@qq.com
