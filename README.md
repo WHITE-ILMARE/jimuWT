@@ -1,4 +1,5 @@
 # jimuWT
+# 第一份正式的前端代码，留存以纪念~
 积木盒子实习笔试题
 
 1.请在页面 http://www.html5tricks.com/demo/css3-frog-expression/index.html 中任选一个表情，
@@ -18,5 +19,4 @@
 5.使用 http://www.nightmarejs.org/ 爬取 https://box.jimu.com/Venus/List 第一页项目数据，并生成一个数组，每个数据格式为 {name: **, rate: **, month: **, status: **}
 答：见文件夹5，运行npm  install安装依赖的包后，运行night.js,即可在控制台中看到爬去取信息。
 
-章哲源
 2480800244@qq.com
